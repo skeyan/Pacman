@@ -1,7 +1,7 @@
 #Pacman in Python with PyGame
 #https://github.com/hbokmann/Pacman
   
-import pygame._view
+import pygame
   
 black = (0,0,0)
 white = (255,255,255)
@@ -11,12 +11,13 @@ red = (255,0,0)
 purple = (255,0,255)
 yellow   = ( 255, 255,   0)
 
-Trollicon=pygame.image.load('images/Trollman.png')
-pygame.display.set_icon(Trollicon)
+myIcon=pygame.image.load('images/pacman.png')
+pygame.display.set_icon(myIcon)
 
 #Add music
 pygame.mixer.init()
-pygame.mixer.music.load('pacman.mp3')
+pygame.mixer.music.load('music/pacman-original.mp3')
+pygame.mixer.music.set_volume(0.1)
 pygame.mixer.music.play(-1, 0.0)
 
 # This class represents the bar at the bottom that the player controls
@@ -398,7 +399,7 @@ def startGame():
 
 
   # Create the player paddle object
-  Pacman = Player( w, p_h, "images/Trollman.png" )
+  Pacman = Player( w, p_h, "images/pacman.png" )
   all_sprites_list.add(Pacman)
   pacman_collide.add(Pacman)
    
